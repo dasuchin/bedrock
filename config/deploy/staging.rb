@@ -1,4 +1,6 @@
 set :stage, :staging
+set :deploy_to, "/home/user/deployments/#{fetch(:application)}/staging"
+set :tmp_dir, '/home/user/tmp'
 
 # Simple Role Syntax
 # ==================
@@ -19,6 +21,10 @@ server 'example.com', user: 'deploy', roles: %w{web app db}
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
+
+set :ssh_options, {
+	user: fetch(:user)
+}
 
 fetch(:default_env).merge!(wp_env: :staging)
 
