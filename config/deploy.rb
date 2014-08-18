@@ -27,7 +27,7 @@ set :grunt_tasks, 'build'
 set :grunt_file, -> {release_path.join('web/app/themes/mmc/Gruntfile.js')}
 set :grunt_target_path, -> {release_path.join('web/app/themes/mmc')}
 
-before 'deploy:update', 'grunt'
+before 'deploy:updated', 'grunt'
 
 namespace :deploy do
   desc 'Restart application'
