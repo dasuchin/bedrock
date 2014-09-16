@@ -70,3 +70,5 @@ define('DISALLOW_FILE_EDIT', true);
 if (!defined('ABSPATH')) {
   define('ABSPATH', $webroot_dir . '/wp/');
 }
+
+define('GOOGLE_ANALYTICS_ID', getenv('GOOGLE_ANALYTICS_ID'));
